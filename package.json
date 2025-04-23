@@ -2,7 +2,7 @@
   "name": "football-game",
   "private": true,
   "version": "1.0.0",
-  "homepage": "https://aliabid31.github.io/Ali-Abid-Football-Challenges",
+  "homepage": "https://aliabid31.github.io/Abid-Ali-Football-Challenges",
   "type": "module",
   "scripts": {
     "dev": "vite",
