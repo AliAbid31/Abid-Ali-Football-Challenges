@@ -4,10 +4,10 @@ import { Link } from 'react-router-dom';
 
 function Home() {
   const handleGoalsClick = () => {
-    window.location.href = `/objects/goals.html`;
+    window.location.href = '../../public/objects/goals.html';
   };
   const handleAssistsClick = () => {
-    window.location.href = `/objects/assists.html`;
+    window.location.href = '../../public/objects/assists.html';
   }
 
   const handleTrophiesClick = () => {
