@@ -310,8 +310,8 @@
             clearInterval(rotationInterval);
             textInputs.forEach(input => {
               if (input.dataset.locked !== 'true') {
-              input.disabled = true;
-            }
+                input.disabled = false;
+              }
             });
           }
         }, 200);
