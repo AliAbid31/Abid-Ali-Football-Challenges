@@ -292,6 +292,11 @@
       function startRotation() {
         rotationCount = 0;
         clearInterval(rotationInterval);
+        textInputs.forEach(input => {
+            if (input.dataset.locked !== 'true') {
+           input.disabled = true;
+          }
+        });
         
         rotationInterval = setInterval(() => {
           const randomNumber = Math.floor(Math.random() * players.length);
@@ -304,6 +309,11 @@
           
           if (rotationCount >= MAX_ROTATIONS) {
             clearInterval(rotationInterval);
+            textInputs.forEach(input => {
+              if (input.dataset.locked !== 'true') {
+              input.disabled = true;
+            }
+            });
           }
         }, 200);
 
