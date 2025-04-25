@@ -274,34 +274,38 @@
       let rotationCount = 0;
       const MAX_ROTATIONS = 15;
       function startRotation() {
-        rotationCount = 0;
-        clearInterval(rotationInterval);
-        textInputs.forEach(input => {
+          rotationCount = 0;
+          clearInterval(rotationInterval);
+
+  // 🔒 Désactiver les inputs non-lockés
+          textInputs.forEach(input => {
             if (input.dataset.locked !== 'true') {
-            input.disabled = true;
+              input.disabled = true;
             }
-        });
-        
-        rotationInterval = setInterval(() => {
-          const randomNumber = Math.floor(Math.random() * players.length);
-          currentPlayer = players[randomNumber];
+          });
 
-          
-          imageContainer.src = '../icons_processed/processed_' + currentPlayer.name2 + '.png';
-          textContainer.textContent = currentPlayer.name;
+          rotationInterval = setInterval(() => {
+            const randomNumber = Math.floor(Math.random() * players.length);
+            currentPlayer = players[randomNumber];
 
-          
-          if (rotationCount >= MAX_ROTATIONS) {
-            clearInterval(rotationInterval);
-              textInputs.forEach(input => {
+            imageContainer.src = '../icons_processed/processed_' + currentPlayer.name2 + '.png';
+            textContainer.textContent = currentPlayer.name;
+
+    // ⬅️ C'était ça qui manquait !
+            rotationCount++;
+
+            if (rotationCount >= MAX_ROTATIONS) {
+              clearInterval(rotationInterval);
+
+      // 🔓 Réactiver les inputs non-lockés
+                textInputs.forEach(input => {
                 if (input.dataset.locked !== 'true') {
-                input.disabled = true;
+                  input.disabled = false;
                 }
               });
-          }
-        }, 200);
-
-      }
+            }
+          }, 200);
+        }  
 
       function handleInputClick(input) {
         if (input.dataset.locked === 'true') return;
