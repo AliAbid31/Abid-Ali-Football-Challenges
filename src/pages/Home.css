@@ -219,11 +219,11 @@ to { width: 100%; }
 @media (max-width: 550px) {
   h2{
     font-size: 1.2rem;
-    line-height: 1rem;
+    line-height: 1.1rem;
   }
     p{
         font-size: 1.1rem;
-        line-height: 1.1rem;
+        line-height: 1rem;
     }
 .section1{
     display: flex;
