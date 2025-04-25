@@ -223,7 +223,7 @@ to { width: 100%; }
   }
     p{
         font-size: 1.1rem;
-        line-height: 1rem;
+        line-height: 1.1rem;
     }
 .section1{
     display: flex;
