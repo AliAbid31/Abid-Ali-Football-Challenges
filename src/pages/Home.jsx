@@ -1,8 +1,11 @@
 import React from 'react';
 import './Home.css';
+import {useState} from 'React'
 import { Link } from 'react-router-dom';
 
 function Home() {
+  const [isLogged, setIsLogged] = useState(false)
+
   const handleGoalsClick = () => {
     window.location.href = '/goals.html';
   };
@@ -13,7 +16,9 @@ function Home() {
   const handleTrophiesClick = () => {
     window.location.href = `/trophies.html`;
   }
-
+  const handleLogin = () => {
+    setIsLogged(true);
+  };
   return (
     <section
       className='section1'
@@ -36,6 +41,12 @@ function Home() {
           margin: '2vh 0',
         }}
       ></div>
+      {!isLogged && (
+        <div className='loggdiv'>
+            <button className='LoginButton'>Login</button>
+            <button className='RegisterButton'>Register</button>
+        </div>
+      )}
 
       <div
         className="div1"
